@@ -362,6 +362,8 @@
 </head>
 <body>
 
+
+
 <div class="container">
     
     <div class="header-top">
@@ -372,7 +374,7 @@
     <h1>
         <span style="font-size: 1.2em; margin-right: 15px;">🐴</span>
 
-Australian Horse Racing Codes (ISO 3166)   </h1>
+Australian Horse Racing Codes (ISO 3166) </h1>
 
     <div class="input-section">
         <div class="input-group">
@@ -385,12 +387,12 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
                 <option value="ALL">ALL</option>
                 <option value="THOROUGHBREDS">THOROUGHBREDS</option>
                 <option value="HARNESS">HARNESS</option>
-                <option value="GREYHOUND">GREYHOUND</option>
+                <option value="GREYHOUNDS">GREYHOUNDS</option>
             </select>
         </div>
         <button id="searchButton" onclick="searchData()">🔍 Search</button>
-        <button id="clearButton" onclick="clearAllData()">❌ Clear All Results</button>
-        <button id="downloadAllPdfButton" onclick="downloadAllDataAsPdf()">📥 Download FULL Data PDF</button>
+        <button id="clearButton" onclick="clearAllData()">❌ Clear All</button>
+        <button id="downloadAllPdfButton" onclick="downloadAllDataAsPdf()">📥 Download FULL PDF</button>
     </div>
 
     <div id="pdfContent">
@@ -402,9 +404,9 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     
     <div id="downloadSearchPdfContainer" style="text-align: center; margin-top: 20px;">
         <button id="viewPdfButton" onclick="viewPdf()" style="display: none;">
-            👁️ View Search Results PDF
+            👁️ View Search KEYS PDF
         </button>
-        <button id="downloadPdfButton" onclick="downloadPdf()" style="display: none;">📥 Download Search Results PDF</button>
+        <button id="downloadPdfButton" onclick="downloadPdf()" style="display: none;">📥 Download KEYS PDF</button>
         <button id="printButton" onclick="window.print()">🖨️ Print Page</button>
     </div>
 
@@ -418,9 +420,10 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     // *** Data Extracted and Cleaned from your PDF ***
     const rawCourseData = [
       
-                  // MIT AGCN License = Use it freely, just give credit
+              // MIT AGCN License = Use it freely, just give credit
 
-    
+
+
     // PAGE 12
 
         
@@ -431,17 +434,17 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     // page one 20 codes
 
 
-    { title: "Q1 LAKESIDE",     state: "QLD", code: "QLEG", type: "GREYHOUND" },
-    { title: "Q2 PARKLANDS",    state: "QLD", code: "QPDG", type: "GREYHOUND" },
+    { title: "Q1 LAKESIDE",     state: "QLD", code: "QLEG", type: "GREYHOUNDS" },
+    { title: "Q2 PARKLANDS",    state: "QLD", code: "QPDG", type: "GREYHOUNDS" },
     { title: "BLACKALL",        state: "QLD", code: "BLKR", type: "THOROUGHBREDS" },
     { title: "MOUNT MAGNET",    state: "QLD", code: "MMGR", type: "THOROUGHBREDS" },
     { title: "LEINSTER",        state: "QLD", code: "LNSR", type: "THOROUGHBREDS" },
 
 
-    { title: "Q STRAIGHT",      state: "QLD", code: "QSTG", type: "GREYHOUND" },
-    { title: "CAPALABA",        state: "QLD", code: "CPLG", type: "GREYHOUND" },
+    { title: "Q STRAIGHT",      state: "QLD", code: "QSTG", type: "GREYHOUNDS" },
+    { title: "CAPALABA",        state: "QLD", code: "CPLG", type: "GREYHOUNDS" },
     { title: "BOWEN",           state: "QLD", code: "BOWR", type: "THOROUGHBREDS" },
-    { title: "BARCALDINE",      state: "QLD", code: "BCDR", type: "GREYHOUND" },
+    { title: "BARCALDINE",      state: "QLD", code: "BCDR", type: "GREYHOUNDS" },
     { title: "HOME HILL",       state: "QLD", code: "HEHR", type: "THOROUGHBREDS" },
 
     { title: "MOUNT ISA",       state: "QLD", code: "MIAR", type: "THOROUGHBREDS" },
@@ -465,12 +468,12 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     { title: "BAIRNSDALE",      state: "VIC", code: "BDAR", type: "THOROUGHBREDS" },
     { title: "CAULFIELD",       state: "VIC", code: "CAUR", type: "THOROUGHBREDS" },
 
-    { title: "CRANBOURNE",      state: "VIC", code: "CRBG", type: "GREYHOUND" },
+    { title: "CRANBOURNE",      state: "VIC", code: "CRBG", type: "GREYHOUNDS" },
     { title: "FLEMINGTON",      state: "VIC", code: "FLMR", type: "THOROUGHBREDS" },
     { title: "HAMILTON",        state: "VIC", code: "HAMR", type: "THOROUGHBREDS" },
     { title: "MILDURA",         state: "VIC", code: "MDUH", type: "HARNESS" },
 
-    { title: "BATHURST",       state: "NSW", code: "BATG", type: "GREYHOUND" },
+    { title: "BATHURST",       state: "NSW", code: "BATG", type: "GREYHOUNDS" },
     { title: "BATHURST",       state: "NSW", code: "BATR", type: "THOROUGHBREDS" },
     { title: "BROKEN HILL",    state: "NSW", code: "BRHH", type: "HARNESS" },
 
@@ -487,7 +490,7 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
 
     // page two 24 codes (3page)
 
-    { title: "PORT PIRIE",       state: "QLD", code: "PTPG", type: "GREYHOUND" },
+    { title: "PORT PIRIE",       state: "QLD", code: "PTPG", type: "GREYHOUNDS" },
     { title: "VICTORIA PARK",    state: "QLD", code: "VIPR", type: "THOROUGHBREDS" },
 
     { title: "MOWBRAY",       state: "VIC", code: "MOWR", type: "THOROUGHBREDS" },
@@ -496,9 +499,9 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     { title: "DARWIN",        state: "QLD", code: "DARR", type: "THOROUGHBREDS" },
 
 
-    { title: "DARWIN",      state: "QLD", code: "DARG", type: "GREYHOUND" },
+    { title: "DARWIN",      state: "QLD", code: "DARG", type: "GREYHOUNDS" },
     { title: "CANBERRA",    state: "NSW", code: "CNBR", type: "THOROUGHBREDS" },
-    { title: "CANBERRA",    state: "NSW", code: "CNBG", type: "GREYHOUND" },
+    { title: "CANBERRA",    state: "NSW", code: "CNBG", type: "GREYHOUNDS" },
     { title: "CANBERRA",    state: "NSW", code: "CNBH", type: "HARNESS" },
 
 
@@ -511,7 +514,7 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
 
 
     { title: "BAIRNSDALE",  state: "VIC", code: "BDAR", type: "THOROUGHBREDS" },
-    { title: "BENDIGO",     state: "VIC", code: "BENG", type: "GREYHOUND" },
+    { title: "BENDIGO",     state: "VIC", code: "BENG", type: "GREYHOUNDS" },
     { title: "BENDIGO",     state: "VIC", code: "BENR", type: "THOROUGHBREDS" },
     { title: "BENALLA",     state: "VIC", code: "BNLR", type: "THOROUGHBREDS" },
     { title: "BOORT",       state: "VIC", code: "BRTH", type: "HARNESS" },
@@ -524,7 +527,7 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     { title: "COBRAM",      state: "VIC", code: "COBH", type: "HARNESS" },
     { title: "COLAC",       state: "VIC", code: "COLR", type: "THOROUGHBREDS" },
     { title: "COLERAINE",   state: "VIC", code: "CLRR", type: "THOROUGHBREDS" },
-    { title: "CRANBOURNE",  state: "VIC", code: "CRBG", type: "GREYHOUND" },
+    { title: "CRANBOURNE",  state: "VIC", code: "CRBG", type: "GREYHOUNDS" },
     { title: "CRANBOURNE",  state: "VIC", code: "CRBH", type: "HARNESS" },
     { title: "CRANBOURNE",  state: "VIC", code: "CRBR", type: "THOROUGHBREDS" },
     { title: "DONALD",      state: "VIC", code: "DONR", type: "THOROUGHBREDS" },
@@ -547,16 +550,16 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     { title: "ARMIDALE",     state: "NSW", code: "ARMH", type: "HARNESS" },
     { title: "BALLINA",      state: "NSW", code: "BLIR", type: "THOROUGHBREDS" },
     { title: "BANKSTOWN",    state: "NSW", code: "BANH", type: "HARNESS" },
-    { title: "BATHURST",     state: "NSW", code: "BATG", type: "GREYHOUND" },
+    { title: "BATHURST",     state: "NSW", code: "BATG", type: "GREYHOUNDS" },
     { title: "BATHURST",     state: "NSW", code: "BATR", type: "THOROUGHBREDS" },
     { title: "BERRIGAN",     state: "NSW", code: "BERR", type: "THOROUGHBREDS" },
     { title: "BOWRAVILLE",   state: "NSW", code: "BVLR", type: "THOROUGHBREDS" },
     { title: "BROKEN HILL",  state: "NSW", code: "BRHH", type: "HARNESS" },
 
-    { title: "CANBERRA",      state: "ACT", code: "CNBG", type: "GREYHOUND" },
+    { title: "CANBERRA",      state: "ACT", code: "CNBG", type: "GREYHOUNDS" },
     { title: "CANBERRA",      state: "ACT", code: "CNBH", type: "HARNESS" },
     { title: "CANBERRA",      state: "ACT", code: "CNBR", type: "THOROUGHBREDS" },
-    { title: "CESSNOCK",      state: "NSW", code: "CESG", type: "GREYHOUND" },
+    { title: "CESSNOCK",      state: "NSW", code: "CESG", type: "GREYHOUNDS" },
 
 
     { title: "CESSNOCK",         state: "NSW", code: "CESR", type: "THOROUGHBREDS" },
@@ -568,7 +571,7 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     { title: "COROWA",           state: "NSW", code: "CORR", type: "THOROUGHBREDS" },
     { title: "COWRA",            state: "NSW", code: "CWRR", type: "THOROUGHBREDS" },
     { title: "COWRA",            state: "NSW", code: "CWRH", type: "HARNESS" },
-    { title: "DAPTO",            state: "NSW", code: "DAPG", type: "GREYHOUND" },
+    { title: "DAPTO",            state: "NSW", code: "DAPG", type: "GREYHOUNDS" },
 
     { title: "FAIRFIELD",  state: "NSW", code: "FFDH", type: "HARNESS" },
     { title: "FORBES",     state: "NSW", code: "FORR", type: "THOROUGHBREDS" },
@@ -576,7 +579,7 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     { title: "GILGANDRA",    state: "NSW", code: "GGAR", type: "THOROUGHBREDS" },
     { title: "GLEN INNES",   state: "NSW", code: "GNIR", type: "THOROUGHBREDS" },
     { title: "GOULBURN",     state: "NSW", code: "GBNR", type: "THOROUGHBREDS" },
-    { title: "GOULBURN",     state: "NSW", code: "GBNG", type: "GREYHOUND" },
+    { title: "GOULBURN",     state: "NSW", code: "GBNG", type: "GREYHOUNDS" },
     { title: "GOULBURN",     state: "NSW", code: "GBNH", type: "HARNESS" },
     { title: "GUNDAGAI",     state: "NSW", code: "GDIR", type: "THOROUGHBREDS" },
 
@@ -624,7 +627,7 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     { title: "GOONDIWINDI",     state: "QLD", code: "GOOR", type: "THOROUGHBREDS" },
     { title: "NTH TERRITORY",   state: "QLD", code: "NTHR", type: "THOROUGHBREDS" },
     { title: "TUNCURRY",        state: "NSW", code: "TUNR", type: "THOROUGHBREDS" },
-    { title: "CAIRNS",          state: "QLD", code: "CNSG", type: "GREYHOUND" },
+    { title: "CAIRNS",          state: "QLD", code: "CNSG", type: "GREYHOUNDS" },
     { title: "CUNDERDIN",       state: "QLD", code: "CDNH", type: "HARNESS" },
 
     // PAGE 14
@@ -635,41 +638,41 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
      // PAGE 13
 
     { title: "PORT PIRIES",     state: "QLD", code: "PTPR", type: "THOROUGHBREDS" },
-    { title: "ROCKHAMPTON",     state: "QLD", code: "ROCG", type: "GREYHOUND" },
+    { title: "ROCKHAMPTON",     state: "QLD", code: "ROCG", type: "GREYHOUNDS" },
     { title: "TOWNSVILLE",      state: "QLD", code: "TWNR", type: "THOROUGHBREDS" },
-    { title: "TOWNSVILLE",      state: "QLD", code: "TWNG", type: "GREYHOUND" },
+    { title: "TOWNSVILLE",      state: "QLD", code: "TWNG", type: "GREYHOUNDS" },
     { title: "REDCLIFFE",       state: "QLD", code: "REDH", type: "HARNESS" },
-    { title: "CANNINGTON",      state: "QLD", code: "CNPG", type: "GREYHOUND" },
+    { title: "CANNINGTON",      state: "QLD", code: "CNPG", type: "GREYHOUNDS" },
 
 
     // PAGE 12
 
-    { title: "RICHMOND",   state: "NSW", code: "RICG", type: "GREYHOUND" },
-    { title: "WENTWORTH PARK",   state: "NSW", code: "WWPG", type: "GREYHOUND" },
-    { title: "ANGLE PARK",   state: "QLD", code: "ANGG", type: "GREYHOUND" },
-    { title: "MOUNT GAMBIER",   state: "QLD", code: "MTGG", type: "GREYHOUND" },
+    { title: "RICHMOND",   state: "NSW", code: "RICG", type: "GREYHOUNDS" },
+    { title: "WENTWORTH PARK",   state: "NSW", code: "WWPG", type: "GREYHOUNDS" },
+    { title: "ANGLE PARK",   state: "QLD", code: "ANGG", type: "GREYHOUNDS" },
+    { title: "MOUNT GAMBIER",   state: "QLD", code: "MTGG", type: "GREYHOUNDS" },
 
      // PAGE 11
 
 
-    { title: "DUBBO",    state: "NSW", code: "DBOG", type: "GREYHOUND" },
+    { title: "DUBBO",    state: "NSW", code: "DBOG", type: "GREYHOUNDS" },
     { title: "DUBBO",       state: "NSW", code: "DBOH", type: "HARNESS" },
     { title: "DUBBO",       state: "NSW", code: "DBOR", type: "THOROUGHBREDS" },
-    { title: "GOSFORD",   state: "NSW", code: "GOSG", type: "GREYHOUND" },
+    { title: "GOSFORD",   state: "NSW", code: "GOSG", type: "GREYHOUNDS" },
     { title: "GOSFORD",   state: "NSW", code: "GOSH", type: "HARNESS" },
     { title: "GOSFORD",   state: "NSW", code: "GOSR", type: "THOROUGHBREDS" },
     { title: "GOULBURNS",   state: "NSW", code: "GBNR", type: "THOROUGHBREDS" },
-    { title: "GRAFTON",   state: "NSW", code: "GRAG", type: "GREYHOUND" },
+    { title: "GRAFTON",   state: "NSW", code: "GRAG", type: "GREYHOUNDS" },
     { title: "GRAFTON",   state: "NSW", code: "GRAR", type: "THOROUGHBREDS" },
 
     { title: "GUNNEDAH",   state: "NSW", code: "GDHR", type: "THOROUGHBREDS" },
-    { title: "GUNNEDAH",   state: "NSW", code: "GDHG", type: "GREYHOUND" },
+    { title: "GUNNEDAH",   state: "NSW", code: "GDHG", type: "GREYHOUNDS" },
 
     { title: "LEETON",   state: "NSW", code: "LTNR", type: "THOROUGHBREDS" },
-    { title: "LISMORE",   state: "NSW", code: "LSMG", type: "GREYHOUND" },
+    { title: "LISMORE",   state: "NSW", code: "LSMG", type: "GREYHOUNDS" },
     { title: "LISMORE",   state: "NSW", code: "LSMR", type: "THOROUGHBREDS" },
     { title: "LITHGOW",   state: "NSW", code: "LITH", type: "HARNESS" },
-    { title: "MAITLAND",   state: "NSW", code: "MTLG", type: "GREYHOUND" },
+    { title: "MAITLAND",   state: "NSW", code: "MTLG", type: "GREYHOUNDS" },
     { title: "MAITLAND",   state: "NSW", code: "MTLH", type: "HARNESS" },
     { title: "MOREE",   state: "NSW", code: "MRER", type: "THOROUGHBREDS" },
     { title: "MORUYA",   state: "NSW", code: "MYAR", type: "THOROUGHBREDS" },
@@ -696,10 +699,10 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     { title: "TERANG",   state: "VIC", code: "TERH", type: "HARNESS" },
     { title: "TERANG",   state: "VIC", code: "TERR", type: "THOROUGHBREDS" },
     { title: "TOWONG",   state: "VIC", code: "TOWR", type: "THOROUGHBREDS" },
-    { title: "TRARALGON",   state: "VIC", code: "TRLG", type: "GREYHOUND" },
+    { title: "TRARALGON",   state: "VIC", code: "TRLG", type: "GREYHOUNDS" },
 
     { title: "TRARALGON",   state: "VIC", code: "TRLR", type: "THOROUGHBREDS" },
-    { title: "WANGARATTA",   state: "VIC", code: "WANG", type: "GREYHOUND" },
+    { title: "WANGARATTA",   state: "VIC", code: "WANG", type: "GREYHOUNDS" },
     { title: "WANGARATTA",   state: "VIC", code: "WANH", type: "HARNESS" },
     { title: "WANGARATTA",   state: "VIC", code: "WANR", type: "THOROUGHBREDS" },
 
@@ -710,14 +713,14 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     { title: "WOOLAMAI",   state: "VIC", code: "WMIR", type: "THOROUGHBREDS" },
     { title: "WYCHEPROOF",   state: "VIC", code: "WPFR", type: "THOROUGHBREDS" },
 
-    { title: " SANDOWN PARK",   state: "VIC", code: "SANG", type: "GREYHOUND" },
+    { title: " SANDOWN PARK",   state: "VIC", code: "SANG", type: "GREYHOUNDS" },
     { title: "ARMIDALE",   state: "NSW", code: "ARMR", type: "THOROUGHBREDS" },
     { title: "ARMIDALE",   state: "NSW", code: "ARMH", type: "HARNESS" },
     { title: "BALLINA",   state: "NSW", code: "BLIR", type: "THOROUGHBREDS" },
 
 
     { title: "BANKSTOWN",   state: "NSW", code: "BANH", type: "HARNESS" },
-    { title: "BATHURST",   state: "NSW", code: "BATG", type: "GREYHOUND" },
+    { title: "BATHURST",   state: "NSW", code: "BATG", type: "GREYHOUNDS" },
     { title: "BATHURST",   state: "NSW", code: "BATH", type: "HARNESS" },
     { title: "BATHURST",   state: "NSW", code: "BATR", type: "THOROUGHBREDS" },
     { title: "BERRIGAN",   state: "NSW", code: "BERR", type: "THOROUGHBREDS" },
@@ -725,17 +728,17 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
 
     { title: "BROKEN HILL",   state: "NSW", code: "BRHR", type: "THOROUGHBREDS" },
     { title: "BROKEN HILL",   state: "NSW", code: "BRHH", type: "HARNESS" },
-    { title: "BULLI",   state: "NSW", code: "BULG", type: "GREYHOUND" },
+    { title: "BULLI",   state: "NSW", code: "BULG", type: "GREYHOUNDS" },
     { title: "BULLI",   state: "NSW", code: "BULH", type: "HARNESS" },
-    { title: "CANBERRA",   state: "NSW", code: "CNBG", type: "GREYHOUND" },
+    { title: "CANBERRA",   state: "NSW", code: "CNBG", type: "GREYHOUNDS" },
 
     { title: "CANBERRA",   state: "NSW", code: "CNBH", type: "HARNESS" },
     { title: "CANBERRA",   state: "NSW", code: "CNBR", type: "THOROUGHBREDS" },
     { title: "CANTERBURY",   state: "NSW", code: "CBYR", type: "THOROUGHBREDS" },
-    { title: "CASINO",   state: "NSW", code: "CSOG", type: "GREYHOUND" },
+    { title: "CASINO",   state: "NSW", code: "CSOG", type: "GREYHOUNDS" },
     { title: "CASINO",   state: "NSW", code: "CSOR", type: "THOROUGHBREDS" },
 
-    { title: "CESSNOCK",   state: "NSW", code: "CESG", type: "GREYHOUND" },
+    { title: "CESSNOCK",   state: "NSW", code: "CESG", type: "GREYHOUNDS" },
     { title: "CESSNOCK",   state: "NSW", code: "CESR", type: "THOROUGHBREDS" },
 
 
@@ -751,7 +754,7 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     { title: "COBRAM",   state: "VIC", code: "COBH", type: "HARNESS" },
     { title: "COLAC",   state: "VIC", code: "COLR", type: "THOROUGHBREDS" },
     { title: "COLERAINE",   state: "VIC", code: "CLRR", type: "THOROUGHBREDS" },
-    { title: "CRANBOURNE",   state: "VIC", code: "CRBG", type: "GREYHOUND" },
+    { title: "CRANBOURNE",   state: "VIC", code: "CRBG", type: "GREYHOUNDS" },
     { title: "CRANBOURNE",   state: "VIC", code: "CRBH", type: "HARNESS" },
 
     { title: "CRANBOURNE",   state: "VIC", code: "CRBR", type: "THOROUGHBREDS" },
@@ -761,7 +764,7 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     { title: "EDENHOPE",   state: "VIC", code: "EDER", type: "THOROUGHBREDS" },
     { title: "FLEMINGTON",   state: "VIC", code: "FLMR", type: "THOROUGHBREDS" },
 
-    { title: "GEELONG",   state: "VIC", code: "GELG", type: "GREYHOUND" },
+    { title: "GEELONG",   state: "VIC", code: "GELG", type: "GREYHOUNDS" },
     { title: "GEELONG",   state: "VIC", code: "GELH", type: "HARNESS" },
     { title: "GEELONG",   state: "VIC", code: "GELR", type: "THOROUGHBREDS" },
     { title: "GREAT WESTERN",   state: "VIC", code: "GWNR", type: "THOROUGHBREDS" },
@@ -771,7 +774,7 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     { title: "HAMILTON",   state: "VIC", code: "HAMR", type: "THOROUGHBREDS" },
     { title: "HAMILTON",   state: "VIC", code: "HAMH", type: "HARNESS" },
     { title: "HANGING ROCK",   state: "VIC", code: "HRKR", type: "THOROUGHBREDS" },
-    { title: "HORSHAM",   state: "VIC", code: "HORG", type: "GREYHOUND" },
+    { title: "HORSHAM",   state: "VIC", code: "HORG", type: "GREYHOUNDS" },
     { title: "HORSHAM",   state: "VIC", code: "HORH", type: "HARNESS" },
     { title: "HORSHAM",   state: "VIC", code: "HORR", type: "THOROUGHBREDS" },
 
@@ -793,7 +796,7 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     { title: "PAKENHAM",   state: "VIC", code: "PAKR", type: "THOROUGHBREDS" },
 
     { title: "PENSHURST",   state: "VIC", code: "PNHR", type: "THOROUGHBREDS" },
-    { title: "SALE",   state: "VIC", code: "SALG", type: "GREYHOUND" },
+    { title: "SALE",   state: "VIC", code: "SALG", type: "GREYHOUNDS" },
     { title: "SALE",   state: "VIC", code: "SALR", type: "THOROUGHBREDS" },
     { title: "SANDOWN",   state: "VIC", code: "SANR", type: "THOROUGHBREDS" },
     { title: "SEYMOUR",   state: "VIC", code: "SEYR", type: "THOROUGHBREDS" },
@@ -850,7 +853,7 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     { title: "ARARAT",   state: "VIC", code: "ARAH", type: "HARNESS" },
     { title: "ARARAT",   state: "VIC", code: "ARAR", type: "THOROUGHBREDS" },
     { title: "AVOCA",   state: "VIC", code: "AVOR", type: "THOROUGHBREDS" },
-    { title: "BALLARAT",   state: "VIC", code: "BALG", type: "GREYHOUND" },
+    { title: "BALLARAT",   state: "VIC", code: "BALG", type: "GREYHOUNDS" },
     { title: "BALLARAT",   state: "VIC", code: "BALH", type: "HARNESS" },
     { title: "BALLARAT",   state: "VIC", code: "BALR", type: "THOROUGHBREDS" },
     { title: "BALNARRING",   state: "VIC", code: "BNGR", type: "THOROUGHBREDS" },
@@ -866,11 +869,11 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     { title: "TUMUT",   state: "NSW", code: "TUMR", type: "THOROUGHBREDS" },
 
 
-    { title: "BEENLEIGH",   state: "QLD", code: "BEEG", type: "GREYHOUND" },
+    { title: "BEENLEIGH",   state: "QLD", code: "BEEG", type: "GREYHOUNDS" },
     { title: "PINJARRA",   state: "QLD", code: "PJAH", type: "HARNESS" },
     { title: "PINJARRA",   state: "QLD", code: "PJAR", type: "THOROUGHBREDS" },
-    { title: "THE MEADOWS",   state: "VIC", code: "MEAG", type: "GREYHOUND" },
-    { title: "SINGLETON",   state: "NSW", code: "SIGG", type: "GREYHOUND" },
+    { title: "THE MEADOWS",   state: "VIC", code: "MEAG", type: "GREYHOUNDS" },
+    { title: "SINGLETON",   state: "NSW", code: "SIGG", type: "GREYHOUNDS" },
     { title: "BUNDABERG",   state: "QLD", code: "BBGR", type: "THOROUGHBREDS" },
 
     { title: "ALEXANDRA",   state: "VIC", code: "ALXR", type: "THOROUGHBREDS" },
@@ -878,18 +881,17 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     { title: "DEDERANG",   state: "VIC", code: "DEDR", type: "THOROUGHBREDS" },
     { title: "DUNKELD",   state: "VIC", code: "DKRR", type: "THOROUGHBREDS" },
     { title: "HEALESVILLE",   state: "VIC", code: "HSVR", type: "THOROUGHBREDS" },
-    { title: "HEALESVILLE",   state: "VIC", code: "HSVG", type: "GREYHOUND" },
+    { title: "HEALESVILLE",   state: "VIC", code: "HSVG", type: "GREYHOUNDS" },
 
     { title: "LONGFORD",   state: "VIC", code: "LONR", type: "THOROUGHBREDS" },
     { title: "MANSFIELD",   state: "VIC", code: "MSFR", type: "THOROUGHBREDS" },
     { title: "SAPPHIRE COAST",   state: "NSW", code: "SACR", type: "THOROUGHBREDS" },
     { title: "YEA",   state: "VIC", code: "YEAR", type: "THOROUGHBREDS" },
     { title: "BUNBURY",   state: "QLD", code: "BNYH", type: "HARNESS" },
-    { title: "BUNBURY",   state: "QLD", code: "BNGR", type: "BNYR" },
 
-    { title: "MANDURAH",   state: "QLD", code: "MRDG", type: "GREYHOUND" },
+    { title: "MANDURAH",   state: "QLD", code: "MRDG", type: "GREYHOUNDS" },
     { title: "HARVEY",   state: "QLD", code: "HARH", type: "HARNESS" },
-    { title: "NORTHAM",   state: "QLD", code: "NTMG", type: "GREYHOUND" },
+    { title: "NORTHAM",   state: "QLD", code: "NTMG", type: "GREYHOUNDS" },
     { title: "NORTHAM",   state: "QLD", code: "NTMH", type: "HARNESS" },
     { title: "NORTHAM",   state: "QLD", code: "NTMR", type: "THOROUGHBREDS" },
     { title: "ALBANY",   state: "QLD", code: "ABNH", type: "HARNESS" },
@@ -897,7 +899,7 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     { title: "ALBANY",   state: "QLD", code: "ABNR", type: "THOROUGHBREDS" },
     { title: "YORK",   state: "QLD", code: "YORR", type: "HARNESS" },
     { title: "YORK",   state: "QLD", code: "BNGR", type: "THOROUGHBREDS" },
-    { title: "TEMORA",   state: "NSW", code: "TEMG", type: "GREYHOUND" },
+    { title: "TEMORA",   state: "NSW", code: "TEMG", type: "GREYHOUNDS" },
     { title: "TEMORA",   state: "NSW", code: "TEMH", type: "HARNESS" },
 
     { title: "TWEED HEADS",   state: "NSW", code: "TWHH", type: "HARNESS" },
@@ -917,7 +919,7 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     { title: "GERALDTON",   state: "QLD", code: "GERR", type: "THOROUGHBREDS" },
     { title: "MOUNT BARKER",   state: "QLD", code: "MTBR", type: "THOROUGHBREDS" },
     { title: "DELORAINE",   state: "VIC", code: "DELR", type: "THOROUGHBREDS" },
-    { title: "THE GARDENS",   state: "NSW", code: "GARG", type: "GREYHOUND" },
+    { title: "THE GARDENS",   state: "NSW", code: "GARG", type: "GREYHOUNDS" },
 
 
     // PAGE 6
@@ -930,13 +932,13 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     { title: "PORT PIRIE",   state: "QLD", code: "PTPR", type: "THOROUGHBREDS" },
 
 
-    { title: "STRATHALBYN",   state: "QLD", code: "STRG", type: "GREYHOUND" },
+    { title: "STRATHALBYN",   state: "QLD", code: "STRG", type: "GREYHOUNDS" },
     { title: "STRATHALBYN",   state: "QLD", code: "STRH", type: "HARNESS" },
     { title: "STRATHALBYN",   state: "QLD", code: "STRR", type: "THOROUGHBREDS" },
     { title: "VICTORIA PARK",   state: "QLD", code: "VIPR", type: "THOROUGHBREDS" },
 
 
-    { title: "ALBION PARK",   state: "QLD", code: "ABKG", type: "GREYHOUND" },
+    { title: "ALBION PARK",   state: "QLD", code: "ABKG", type: "GREYHOUNDS" },
     { title: "ALBION PARK",   state: "QLD", code: "ABKH", type: "HARNESS" },
     { title: "BEAUDESERT",   state: "QLD", code: "BDTR", type: "THOROUGHBREDS" },
     { title: "BEAUDESERT",   state: "QLD", code: "BDTH", type: "HARNESS" },
@@ -949,7 +951,7 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     { title: "GATTON",   state: "QLD", code: "GTNR", type: "THOROUGHBREDS" },
 
 
-    { title: "GOLD COAST",   state: "QLD", code: "GOCG", type: "GREYHOUND" },
+    { title: "GOLD COAST",   state: "QLD", code: "GOCG", type: "GREYHOUNDS" },
     { title: "GOLD COAST",   state: "QLD", code: "GOCH", type: "HARNESS" },
     { title: "GOLD COAST",   state: "QLD", code: "GOCR", type: "THOROUGHBREDS" },
     { title: "IPSWICH",   state: "QLD", code: "IPSR", type: "THOROUGHBREDS" },
@@ -959,7 +961,7 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     { title: "KILCOY",   state: "QLD", code: "KOYH", type: "HARNESS" },
     { title: "MACKAY",   state: "QLD", code: "MACR", type: "THOROUGHBREDS" },
     { title: "ROCKHAMPTON",   state: "QLD", code: "ROCR", type: "THOROUGHBREDS" },
-    { title: "TOOWOOMBA",   state: "QLD", code: "TWBG", type: "GREYHOUND" },
+    { title: "TOOWOOMBA",   state: "QLD", code: "TWBG", type: "GREYHOUNDS" },
     { title: "TOOWOOMBA",   state: "QLD", code: "TWBH", type: "HARNESS" },
     { title: "TOOWOOMBA",   state: "QLD", code: "TWBR", type: "THOROUGHBREDS" },
 
@@ -967,24 +969,24 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     { title: "BELMONT",   state: "QLD", code: "BELR", type: "THOROUGHBREDS" },
     { title: "GLOUCESTER",   state: "QLD", code: "GLPH", type: "HARNESS" },
 
-    { title: "DEVONPORT",   state: "VIC", code: "DEVG", type: "GREYHOUND" },
+    { title: "DEVONPORT",   state: "VIC", code: "DEVG", type: "GREYHOUNDS" },
     { title: "DEVONPORT",   state: "VIC", code: "DEVH", type: "HARNESS" },
     { title: "DEVONPORT",   state: "VIC", code: "DEVR", type: "THOROUGHBREDS" },
 
-    { title: "HOBART",   state: "VIC", code: "HOBG", type: "GREYHOUND" },
+    { title: "HOBART",   state: "VIC", code: "HOBG", type: "GREYHOUNDS" },
     { title: "HOBART",   state: "VIC", code: "HOBH", type: "HARNESS" },
     { title: "HOBART",   state: "VIC", code: "HOBR", type: "THOROUGHBREDS" },
-    { title: "LAUNCESTON",   state: "VIC", code: "LAUG", type: "GREYHOUND" },
+    { title: "LAUNCESTON",   state: "VIC", code: "LAUG", type: "GREYHOUNDS" },
     { title: "LAUNCESTON",   state: "VIC", code: "LAUH", type: "HARNESS" },
     { title: "LAUNCESTON",   state: "VIC", code: "LAUR", type: "THOROUGHBREDS" },
 
 
     // PAGE 5
 
-    { title: "NEWCASTLE",   state: "NSW", code: "NEWG", type: "GREYHOUND" },
+    { title: "NEWCASTLE",   state: "NSW", code: "NEWG", type: "GREYHOUNDS" },
     { title: "NEWCASTLE",   state: "NSW", code: "NEWH", type: "HARNESS" },
     { title: "NEWCASTLE",   state: "NSW", code: "NEWR", type: "THOROUGHBREDS" },
-    { title: "NOWRA",   state: "NSW", code: "NOWG", type: "GREYHOUND" },
+    { title: "NOWRA",   state: "NSW", code: "NOWG", type: "GREYHOUNDS" },
     { title: "NOWRA",   state: "NSW", code: "NOWR", type: "THOROUGHBREDS" },
     { title: "ORANGE",   state: "NSW", code: "ORAH", type: "HARNESS" },
 
@@ -1007,7 +1009,7 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     { title: "TAMWORTH",   state: "NSW", code: "TAMR", type: "THOROUGHBREDS" },
 
     { title: "TAREE",   state: "NSW", code: "TRER", type: "THOROUGHBREDS" },
-    { title: "WAGGA",   state: "NSW", code: "WAGG", type: "GREYHOUND" },
+    { title: "WAGGA",   state: "NSW", code: "WAGG", type: "GREYHOUNDS" },
     { title: "WAGGA",   state: "NSW", code: "WAGH", type: "HARNESS" },
     { title: "WAGGA",   state: "NSW", code: "WAGR", type: "THOROUGHBREDS" },
     { title: "WALCHA",   state: "NSW", code: "WLCR", type: "THOROUGHBREDS" },
@@ -1016,17 +1018,17 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
     { title: "WARWICK FARM",   state: "NSW", code: "WFMR", type: "THOROUGHBREDS" },
     { title: "WAUCHOPE",   state: "NSW", code: "WHPR", type: "THOROUGHBREDS" },
     { title: "WELLINGTON",   state: "NSW", code: "WTNR", type: "THOROUGHBREDS" },
-    { title: "WENTWORTH PARK ",   state: "NSW", code: "WWPG", type: "GREYHOUND" },
-    { title: "WYONG",   state: "NSW", code: "WYOG", type: "GREYHOUND" },
+    { title: "WENTWORTH PARK ",   state: "NSW", code: "WWPG", type: "GREYHOUNDS" },
+    { title: "WYONG",   state: "NSW", code: "WYOG", type: "GREYHOUNDS" },
 
     { title: "WYONG",   state: "NSW", code: "WYOH", type: "HARNESS" },
     { title: "WYONG",   state: "NSW", code: "WYOR", type: "THOROUGHBREDS" },
     { title: "YOUNG",   state: "NSW", code: "YONH", type: "HARNESS" },
     { title: "GRIFFITH",   state: "NSW", code: "GRIH", type: "HARNESS" },
-    { title: "ANGLE PARK ",   state: "QLD", code: "ANGG", type: "GREYHOUND" },
+    { title: "ANGLE PARK ",   state: "QLD", code: "ANGG", type: "GREYHOUNDS" },
 
     { title: "CLARE",   state: "QLD", code: "CLAR", type: "THOROUGHBREDS" },
-    { title: "GAWLER",   state: "QLD", code: "GAWG", type: "GREYHOUND" },
+    { title: "GAWLER",   state: "QLD", code: "GAWG", type: "GREYHOUNDS" },
     { title: "GAWLER",   state: "QLD", code: "GAWH", type: "HARNESS" },
     { title: "GAWLER",   state: "QLD", code: "GAWR", type: "THOROUGHBREDS" },
     { title: "GLOBE DERBY",   state: "QLD", code: "GLDH", type: "HARNESS" },
@@ -1034,7 +1036,7 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
 
     { title: "KADINA",   state: "QLD", code: "KADH", type: "HARNESS" },
     { title: "KAPUNDA",   state: "QLD", code: "KPDH", type: "HARNESS" },
-    { title: "MOUNT GAMBIE",   state: "QLD", code: "MTGG", type: "GREYHOUND" },
+    { title: "MOUNT GAMBIE",   state: "QLD", code: "MTGG", type: "GREYHOUNDS" },
     { title: "MOUNT GAMBIER",   state: "QLD", code: "MTGH", type: "HARNESS" },
     { title: "MOUNT GAMBIER",   state: "QLD", code: "MTGR", type: "THOROUGHBREDS" },
 
@@ -1052,18 +1054,18 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
 
     // PAGE 3
 
-    { title: "SHEPPARTON",   state: "VIC", code: "SHEG", type: "GREYHOUND" },
+    { title: "SHEPPARTON",   state: "VIC", code: "SHEG", type: "GREYHOUNDS" },
     { title: "SHEPPARTON",   state: "VIC", code: "SHEH", type: "HARNESS" },
     { title: "SWAN HILL",   state: "VIC", code: "SWNH", type: "HARNESS" },
 
-    { title: "WARRNAMBOOL",   state: "VIC", code: "WBOG", type: "GREYHOUND" },
+    { title: "WARRNAMBOOL",   state: "VIC", code: "WBOG", type: "GREYHOUNDS" },
     { title: "WARRNAMBOOL",   state: "VIC", code: "WBOH", type: "HARNESS" },
     { title: "WARRNAMBOOL",   state: "VIC", code: "WBOR", type: "THOROUGHBREDS" },
-    { title: "WARRAGUL",   state: "VIC", code: "WRGG", type: "GREYHOUND" },
+    { title: "WARRAGUL",   state: "VIC", code: "WRGG", type: "GREYHOUNDS" },
     { title: "WARRAGUL",   state: "VIC", code: "WRGH", type: "HARNESS" },
 
     { title: "WERRIBEE",   state: "VIC", code: "WRBR", type: "THOROUGHBREDS" },
-    { title: "SANDOWN PARK",   state: "VIC", code: "SANG", type: "GREYHOUND" },
+    { title: "SANDOWN PARK",   state: "VIC", code: "SANG", type: "GREYHOUNDS" },
     { title: "ALBURY",   state: "NSW", code: "ALBH", type: "HARNESS" },
     { title: "ALBURY",   state: "NSW", code: "ALBR", type: "THOROUGHBREDS" },
 
@@ -1083,7 +1085,7 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
 
      // NEW ADD
 
-    { title: "TAREE",   state: "NSW", code: "TREG", type: "GREYHOUND" },
+    { title: "TAREE",   state: "NSW", code: "TREG", type: "GREYHOUNDS" },
 
         
     ];
@@ -1178,6 +1180,7 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
         renderDashboard();
     }
 
+        // MIT AGCN License = Use it freely, just give credit
 
     /**
      * Groups data by race type and generates the HTML table output for the dashboard.
@@ -1209,7 +1212,7 @@ Australian Horse Racing Codes (ISO 3166)   </h1>
 
         // Generate HTML output, ordered by preference
         let htmlContent = '';
-        const raceTypesOrder = ["THOROUGHBREDS", "HARNESS", "GREYHOUND"];
+        const raceTypesOrder = ["THOROUGHBREDS", "HARNESS", "GREYHOUNDS"];
 
         raceTypesOrder.forEach(type => {
             if (groupedData[type] && groupedData[type].length > 0) {
@@ -1278,7 +1281,7 @@ TOTAL CODES: ${currentDisplayedData.length}
         }, {});
 
         // Generate output, ordered by preference
-        const raceTypesOrder = ["THOROUGHBREDS", "HARNESS", "GREYHOUND"];
+        const raceTypesOrder = ["THOROUGHBREDS", "HARNESS", "GREYHOUNDS"];
         raceTypesOrder.forEach(type => {
             // Get sorted items for this type, default to empty array if none found
             const sortedItems = groupedData[type] ? groupedData[type].sort((a, b) => a.title.localeCompare(b.title)) : [];
@@ -1424,10 +1427,3 @@ TOTAL CODES: ${currentDisplayedData.length}
 
 </body>
 </html>
-
-
-
-
-
-
-
