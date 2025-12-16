@@ -1225,14 +1225,23 @@ Australian Horse Racing Codes (ISO 3166) </h1>
         const downloadPdfButton = document.getElementById('downloadPdfButton');
         const viewPdfButton = document.getElementById('viewPdfButton');
         const downloadTxtButton = document.getElementById('downloadTxtButton');
+        const searchResultsHeading = document.getElementById('searchResultsHeading');
 
-        if (currentDisplayedData.length === 0) {
+        const totalCount = currentDisplayedData.length; // Calculate total count
+
+        if (totalCount === 0) {
             outputDashboard.innerHTML = '<p id="initialMessage" style="text-align: center; color: #777; padding: 20px; background: #f0f0f0; border-radius: 4px;">Enter a TITLE and RACE TYPE and click \'Search\' to view results.</p>';
             downloadPdfButton.style.display = 'none'; // Hide PDF button when empty
             viewPdfButton.style.display = 'none'; // Hide View button when empty
             downloadTxtButton.style.display = 'none'; // Hide TXT button when empty
+            // Reset heading text when empty
+            searchResultsHeading.innerHTML = '📊 Search Results '; 
             return;
         }
+        
+        // ADDED: Update the main search results heading with the total count
+        searchResultsHeading.innerHTML = `📊 Search Results (${totalCount} Total)`;
+
 
         // Show buttons when there are results
         downloadPdfButton.style.display = 'inline-block';
