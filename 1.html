@@ -434,18 +434,35 @@
 </div>
 
 <script>
+    /* SECURITY SCRIPT 
+       - Disables Right Click
+       - Disables Inspect Element (F12, Ctrl+Shift+I, Ctrl+U)
+    */
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.onkeydown = function(e) {
+        // Block F12
+        if(e.keyCode == 123) return false;
+        // Block Ctrl+Shift+I
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false;
+        // Block Ctrl+Shift+J
+        if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) return false;
+        // Block Ctrl+U
+        if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false;
+    };
+
     let currentDisplayedData = [];
 
     const rawCourseData = [
-       
-   
- // MIT AGCN License = Use it freely, just give credit
+ 
+// MIT AGCN License = Use it freely, just give credit
 
   // PAGE 12
 
         
     { title: "WENTWORTH PARK",         state: "NSW", code: "WWPG", type: "THOROUGHBREDS" },
     { title: "GLOUCESTER PARK",        state: "QLD", code: "GLPR", type: "THOROUGHBREDS" },
+    { title: "KANGAROO ISLAND",        state: "QLD", code: "KISR", type: "THOROUGHBREDS" },
+
 
 
 
@@ -631,7 +648,7 @@
 
 
     { title: "COOLAMON",    state: "NSW", code: "COOH", type: "HARNESS" },
-    { title: "BURNIE",      state: "NSW", code: "BUNHS", type: "HARNESS" },
+    { title: "BROKEN HILL", state: "NSW", code: "BRHG", type: "GREYHOUNDS" },
     { title: "BLAYNEY",     state: "NSW", code: "BLAH", type: "HARNESS" },
     { title: "BUSSELTON",   state: "QLD", code: "BUSH", type: "HARNESS" },
     { title: "NARRABRI",    state: "NSW", code: "NABH", type: "HARNESS" },
@@ -1110,7 +1127,7 @@
 
 
             
-        
+ 
     ];
 
     function getSriLankaDate() {
@@ -1264,7 +1281,6 @@
                     animation: 150,
                     ghostClass: 'sortable-ghost',
                     onEnd: function() {
-                        // Update the currentDisplayedData array to match the new visual order
                         updateDataOrder();
                     }
                 });
@@ -1415,3 +1431,7 @@ TOTAL CODES: ${currentDisplayedData.length}
 
 </body>
 </html>
+
+
+
+
