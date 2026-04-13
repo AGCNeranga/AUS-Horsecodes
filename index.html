@@ -389,6 +389,37 @@
             font-weight: bold;
         }
         
+        /* --- NEW: TOAST NOTIFICATION STYLING --- */
+        #toastContainer {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10001;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .toast-msg {
+            background: var(--bg-dark);
+            color: var(--neon-green);
+            border: 1px solid var(--neon-green);
+            box-shadow: 0 0 10px var(--neon-green);
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.9em;
+            font-weight: bold;
+            animation: slideIn 0.3s ease-out, fadeOut 0.5s ease-in 2.5s forwards;
+            min-width: 200px;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes fadeOut {
+            to { opacity: 0; transform: translateY(-10px); }
+        }
+
         /* CSS for print/PDF consistency */
         @media print {
             body { 
@@ -405,7 +436,7 @@
                 margin: 0 !important;
                 background: white !important;
             }
-            button, .input-section, .header-top, #downloadSearchPdfContainer, #searchResultsHeading { 
+            button, .input-section, .header-top, #downloadSearchPdfContainer, #searchResultsHeading, #toastContainer { 
                 display: none !important; 
             }
             h1 { color: #000 !important; text-shadow: none !important; }
@@ -434,6 +465,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
+
+<div id="toastContainer"></div>
 
 <div class="container">
     
@@ -508,6 +541,7 @@
 
     const rawCourseData = [
     
+  
 
   // MIT AGCN License = Use it freely, just give credit
 
@@ -1184,7 +1218,23 @@
     { title: "LEETON",          state: "NSW", code: "LTNH", type: "HARNESS" },
     { title: "BRIDGETOWN",      state: "QLD", code: "BRTH", type: "HARNESS" },
 
+
+    
     ];
+
+    // --- NEW: SMART POPUP LOGIC ---
+    function showToast(message) {
+        const container = document.getElementById('toastContainer');
+        const toast = document.createElement('div');
+        toast.className = 'toast-msg';
+        toast.innerText = message;
+        container.appendChild(toast);
+        
+        // Remove from DOM after animation finishes
+        setTimeout(() => {
+            toast.remove();
+        }, 3000);
+    }
 
     // --- NEW: AUTOCOMPLETE LOGIC ---
     const titleInput = document.getElementById('titleInput');
@@ -1242,7 +1292,8 @@
     }
 
     function searchData() {
-        const titleInputRaw = document.getElementById('titleInput').value.trim();
+        const inputEl = document.getElementById('titleInput');
+        const titleInputRaw = inputEl.value.trim();
         const raceType = document.getElementById('raceTypeSelect').value;
 
         if (titleInputRaw === "") {
@@ -1256,6 +1307,7 @@
 
         const existingKeys = currentDisplayedData.map(item => item.title + item.code);
         let matchFoundInDatabase = false; 
+        let addedCount = 0;
 
         rawCourseData.forEach(item => {
             const itemTitleUpper = item.title.toUpperCase();
@@ -1268,12 +1320,18 @@
                 if (!existingKeys.includes(newKey)) {
                     currentDisplayedData.push(item);
                     existingKeys.push(newKey); 
+                    addedCount++;
+                    // Show small smart pop for each add
+                    showToast(`Added: ${item.title}`);
                 }
             }
         });
         
         if (!matchFoundInDatabase) {
              alert(`ERROR: No course codes found in the database.`);
+        } else {
+            // NEW: AUTO REMOVE TITLE TEXT AFTER SEARCH
+            inputEl.value = "";
         }
         
         saveToLocalStorage();
@@ -1447,9 +1505,6 @@ TOTAL CODES: ${currentDisplayedData.length}
         return htmlContent;
     }
 
-   
-
-
      function downloadTxt() {
         if (currentDisplayedData.length === 0) return alert("Dashboard empty.");
         const textContent = getPlainTextContent();
@@ -1460,9 +1515,6 @@ TOTAL CODES: ${currentDisplayedData.length}
         document.body.appendChild(a); a.click();
         document.body.removeChild(a); URL.revokeObjectURL(url);
     }
-
-
-
 
     function viewPdf() {
         if (currentDisplayedData.length === 0) return alert("Dashboard empty.");
